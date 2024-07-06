@@ -25,7 +25,7 @@ func handleHelloWorld(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
 	}
 
-	responseWriter(w, "Hello world")
+	responseWriter(w, "Hello World!")
 }
 
 func handleHealth(w http.ResponseWriter, r *http.Request) {
@@ -46,7 +46,6 @@ func handleNewEndpoint(w http.ResponseWriter, r *http.Request) {
 
 func responseWriter(w http.ResponseWriter, respStr string) {
 	response := []byte(respStr)
-	fmt.Println(response)
 
 	_, err := w.Write(response)
 	if err != nil {
